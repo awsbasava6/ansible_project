@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+  backend:
+    image: registry/famtree-backend:latest
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: registry/famtree-frontend:latest
+    ports:
+      - "80:80"
