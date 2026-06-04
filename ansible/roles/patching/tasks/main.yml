@@ -1,0 +1,4 @@
+- name: Update OS packages
+  apt:
+    upgrade: dist
+    update_cache: yes

@@ -1,0 +1,39 @@
+- name: Pull backend image
+  community.docker.docker_image:
+    name: "awsbasava6/synthlinx-backend:v2"
+    source: pull
+    force_source: yes
+
+- name: Pull frontend image
+  community.docker.docker_image:
+    name: "awsbasava6/synthlinx-frontend:v2" 
+    source: pull
+    force_source: yes
+
+- name: Stop existing backend container
+  community.docker.docker_container:
+    name: backend
+    state: absent
+
+- name: Start backend container
+  community.docker.docker_container:
+    name: backend
+    image: "awsbasava6/synthlinx-backend:v1"
+    state: started
+    restart_policy: always
+    ports:
+      - "5000:5000"
+
+- name: Stop existing frontend container
+  community.docker.docker_container:
+    name: frontend
+    state: absent
+
+- name: Start frontend container
+  community.docker.docker_container:
+    name: frontend
+    image: "awsbasava6/synthlinx-frontend:v1"
+    state: started
+    restart_policy: always
+    ports:
+      - "80:80"

@@ -1,0 +1,13 @@
+- name: Rollback backend image
+  community.docker.docker_container:
+    name: backend
+    image: "{{ rollback_backend_image }}"
+    state: started
+    restart_policy: always
+
+- name: Rollback frontend image
+  community.docker.docker_container:
+    name: frontend
+    image: "{{ rollback_frontend_image }}"
+    state: started
+    restart_policy: always

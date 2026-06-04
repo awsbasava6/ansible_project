@@ -1,0 +1,17 @@
+- name: Docker Install on all servers
+  hosts: all
+  become: yes
+  roles:
+    - docker_install
+
+- name: Deploy Application
+  hosts: all
+  become: yes
+  roles:
+    - app_deploy
+
+- name: Run Health Checks
+  hosts: all
+  become: no
+  roles:
+    - healthcheck

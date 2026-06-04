@@ -1,0 +1,19 @@
+- name: Check frontend is reachable
+  uri:
+    url: "http://localhost"
+    status_code: 200
+  register: frontend_result
+  retries: 5
+  delay: 5
+
+- name: Check backend is reachable
+  uri:
+    url: "http://localhost:5000"
+    status_code: 200
+  register: backend_result
+  retries: 5
+  delay: 5
+
+- name: Show status
+  debug:
+    msg: "App is healthy on {{ inventory_hostname }}"

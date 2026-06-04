@@ -1,0 +1,8 @@
+- name: Install certbot
+  apt:
+    name: certbot
+    state: present
+
+- name: Dummy SSL step
+  debug:
+    msg: "SSL setup placeholder (use nginx + certbot in real project)"

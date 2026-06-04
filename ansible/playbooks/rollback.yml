@@ -1,0 +1,10 @@
+- name: Rollback deployment
+  hosts: all
+  become: yes
+
+  vars:
+    rollback_frontend_image: awsbasava6/synthlinx-frontend:v2
+    rollback_backend_image: awsbasava6/synthlinx-backend:v2
+
+  roles:
+    - rollback
