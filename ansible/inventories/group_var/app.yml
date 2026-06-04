@@ -1,5 +1,5 @@
 frontend_image: awsbasava6/synthlinx-frontend:v2
-backend_image: awsbasava6/synthlinx-backend:v1
+backend_image: awsbasava6/synthlinx-backend:v2
 
 docker_users:
   - ubuntu
