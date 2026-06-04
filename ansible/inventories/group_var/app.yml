@@ -1,0 +1,9 @@
+frontend_image: awsbasava6/synthlinx-frontend:v2
+backend_image: awsbasava6/synthlinx-backend:v1
+
+docker_users:
+  - ubuntu
+
+app_ports:
+  frontend: 80
+  backend: 5000
